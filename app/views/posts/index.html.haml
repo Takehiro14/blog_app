@@ -1,9 +1,13 @@
 .wrapper
   .header
+    .header__left-navi
+      = link_to 'Our Blog', root_path, class: 'header__left-navi__text'
     - if user_signed_in?
-      = link_to '新規投稿', new_post_path
-      = link_to 'マイページ', '#'
-      = link_to 'ログアウト', destroy_user_session_path, method: :delete
+      .header__right-navi
+        = link_to '新規投稿', new_post_path, class: 'header__right-navi__box', id: 'new-posts'
+        = link_to 'マイページ', '#', class: 'header__right-navi__box'
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header__right-navi__box'
     - else
-      = link_to '新規登録', new_user_registration_path
-      = link_to 'ログイン', new_user_session_path
+      .header__right-navi
+        = link_to '新規登録', new_user_registration_path, class: 'header__right-navi__box'
+        = link_to 'ログイン', new_user_session_path, class: 'header__right-navi__box'
