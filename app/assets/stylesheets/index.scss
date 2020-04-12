@@ -33,4 +33,28 @@
       }
     }
   }
+  //記事一覧
+  .main-content {
+    background-color: #fff;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    h2 {
+      padding: 25px 0 0 25px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    &__article {
+      margin-top: 20px;
+      padding-left: 10px;
+      border: 1px solid #eeeeee;
+      height: 50px;
+      line-height: 50px;
+      font-size: 18px;
+      &__detail {
+        color: #3ccace;
+        text-decoration: none;
+      }
+    }
+  }
 }

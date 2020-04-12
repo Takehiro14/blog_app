@@ -1,2 +1,7 @@
 .wrapper
   = render partial: 'header'
+  .main-content
+    %h2 最新記事一覧
+    - @posts.each do |post|
+      .main-content__article
+        = link_to "■【#{post.title}】", '#', class: 'main-content__article__detail'
