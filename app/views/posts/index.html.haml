@@ -3,5 +3,11 @@
   .main-content
     %h2 最新記事一覧
     - @posts.each do |post|
-      .main-content__article
-        = link_to "■【#{post.title}】", post_path(post), class: 'main-content__article__detail'
+      - if user_signed_in? && post.user_id == current_user.id
+        .main-content__article
+          = link_to "■【#{post.title}】", edit_post_path(post), class: 'main-content__article__detail'
+          = link_to "投稿者：#{post.user.name}", "#", class: 'main-content__article__detail-name'
+      - else
+        .main-content__article
+          = link_to "■【#{post.title}】", post_path(post), class: 'main-content__article__detail'
+          = link_to "投稿者：#{post.user.name}", "#", class: 'main-content__article__detail-name'

@@ -1,0 +1,11 @@
+.wrapper
+  = render partial: 'header'
+  .content
+    %h2 投稿記事の編集
+    = form_with model: @post, class: 'form', local: true do |f|
+      .content__top
+        = f.text_field :title, autoforcus: true, placeholder: 'タイトル', class: 'form__title'
+      .content__middle
+        = f.text_area :content, autoforcus: true, placeholder: '本文', class: 'form__text'
+      .content__bottom
+        = f.submit '編集', class: 'form__submit'

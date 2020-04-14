@@ -55,6 +55,14 @@
         color: #3ccace;
         text-decoration: none;
       }
+      &__detail-name {
+        text-decoration: none;
+        font-size: 13px;
+        color: black;
+      }
+      &__detail-name:hover {
+        color: #3ccace;
+      }
     }
   }
 }
