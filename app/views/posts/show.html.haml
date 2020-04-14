@@ -2,6 +2,6 @@
   = render partial: 'header'
   .show
     .show__title
-      = @post.title
+      %h2= @post.title
     .show__content
-      = @post.content
+      %p= simple_format(@post.content)
