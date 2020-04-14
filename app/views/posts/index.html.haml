@@ -11,3 +11,5 @@
         .main-content__article
           = link_to "■【#{post.title}】", post_path(post), class: 'main-content__article__detail'
           = link_to "投稿者：#{post.user.name}", "#", class: 'main-content__article__detail-name'
+  %ul
+    %li=paginate(@posts)
