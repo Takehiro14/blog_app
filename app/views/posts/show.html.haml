@@ -5,3 +5,10 @@
       %h2= @post.title
     .show__content
       %p= simple_format(@post.content)
+    .show__bottom
+    - if user_signed_in? && @post.user_id == current_user.id
+      = link_to '編集', edit_post_path(@post), class: 'show__bottom__text'
+      = link_to '削除', post_path(@post), method: :delete, data: {confirm: "削除しますか？"}, class: 'show__bottom__text'
+      = link_to '記事一覧に戻る', root_path, class: 'show__bottom__text'
+    - else
+      = link_to '記事一覧に戻る', root_path, class: 'show__bottom__text'

@@ -27,4 +27,12 @@
       font-size: 18px;
     }
   }
+  &__bottom {
+    margin-top: 50px;
+    &__text {
+      color: blue;
+      font-size: 17px;
+      text-decoration: none;
+    }
+  }
 }
