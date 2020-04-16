@@ -4,7 +4,7 @@
   - if user_signed_in?
     .header__right-navi
       = link_to '新規投稿', new_post_path, class: 'header__right-navi__box', id: 'new-posts'
-      = link_to "#{current_user.name}", '#', class: 'header__right-navi__box'
+      = link_to "#{current_user.name}", user_path(current_user.id), class: 'header__right-navi__box'
       = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'header__right-navi__box'
   - else
     .header__right-navi
